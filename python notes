@@ -1,0 +1,6 @@
+# print
+print("Hello Python world!")
+
+# 变量
+message=“love”
+print（message）
