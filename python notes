@@ -1,6 +1,268 @@
+数据类型
+####################################
+
+Python 程序中保存的所有数据都是围绕对象这个概念构建的，每个对象都有一个标识、一个类型（也叫作它的类）和一个值。例如，执行 ``>>> a = 42`` 时，就会创建一个值为 42 的整数对象，其中，对象的标识可以看作是指向它在内存中所处位置的指针，那么变量 a 就可以看做是这个对象的标识；类型就是整数类型；值就是 42。
+
+对象的类型也称作对象的类，描述了对象的内部表示及它支持的方法与操作。创建特定类型的对象时，有时也将该对象称为该类型的实例。实例被创建之后，它的标识和类型就不可改变。如果某个对象包含对其他对象的引用，则将其称为容器（container）或集合（collection）。
+
+变量
+************************************
+
+Python 是一种动态类型的语言，在程序执行过程中，变量名会被绑定到不同的值，而且这些值可以属于不同的类型。赋值运算符 ``=`` 的作用仅仅是在名称和值之间创建一种关联。尽管每个值都有一个相关类型，如 integer 或 string，但变量名称是无类型的，在执行过程中可以引用任意类型的数据。
+
+变量在赋值以后才会被创建。变量名只能包含字母、数字和下划线，而且不能以数字开头，变量名区分大小写，不能将 Python 定义的关键字用作变量名。例如：
+
+.. highlight:: none
+
+::
+
+    >>> counter = 100              # 整型变量
+    >>> miles = 1000.0             # 浮点型变量
+    >>> name = "runoob"            # 字符串
+    >>> a = b = c = 1              # 多个变量赋值
+
+    >>> a, b, c = 1, 2, "runoob"   # 多个变量同时赋值，也叫序列解包
+
+
+标准数据类型
+************************************
+
+
+
 # print
 print("Hello Python world!")
 
 # 变量
 message=“love”
 print（message）
+
+1.在终端使用
+文件夹Applications，选择Terminal
+也可以Command+空格，搜索terminal，按回车
+
+执行命令python3
+
+
+2. 在终端运行
+⭐使用命令cd，浏览文件系统，切换到对应文件夹
+使用命令ls，显示当前目录中所有未隐藏的文件
+使用命令python3 xxx.py，运行文件
+
+
+
+3. 使用编辑器
+启动VS Code
+选择菜单File-New file，或按Command+N，新建文件
+将文件保存到文件夹python_work，命名为xxx.py
+
+
+4. 在编辑器运行程序
+运行程序，显示结果：菜单Run-Run Without Debugging，或按Command+F5
+
+
+
+# hello_world.py
+print("Hello Python world!")
+
+
+# 变量，程序会记录变量的最新值
+message="Hello"
+print(message)
+
+⭐变量名规则830
+
+
+# 练习2.1&2.2 simple_message.py
+me="human"
+print(me)
+me="animal"
+print(me)
+-output-
+human
+animal
+
+# 字符串，首字母大写 name.py
+name="abc def"
+print(name.title())
+-output-
+Abc Def
+
+Abc, abc, ABC显示结果一致
+
+
+# 字符串，全部大写或全部小写
+print(name.upper())
+print(name.lower())
+
+
+# f字符串（format）
+⭐939
+
+
+# 制表符，即段前缩进，\t
+print("\tHello")
+-output-
+        Hello
+
+# 换行符，\n
+print("List:\nA\nB\nC")
+-output-
+List:
+A
+B
+C
+
+# 同时包含制表符和换行符，\n\t，讲究顺序
+print("List: \n\tA\n\tB\n\tC")
+-output-
+List: 
+        A
+        B
+        C
+
+# 试一下换位置，\t\n
+print("List: \t\nA\t\nB\t\nC")
+-output-
+List: 
+A
+B
+C
+
+# 删除字符串右端空白，rstrip()。删除字符串左端空白，lstrip()。删除两端空白，strip()
+me=" human "
+print(me.rstrip())
+
+# 但字符串内容删除是暂时的，再次输入变量值的时候，仍会显示第一次赋予的值。要永久删除字符串的空白，必须将删除操作的结果关联到变量
+⭐️
+me=" human "
+print(me.lstrip())
+print(me)
+-output-
+human 
+ human
+
+# 删除前缀，removeprefix('http://')
+url='http://nostarch.com'
+url.removeprefix('http://')
+❗上面这个无法印出结果，修正为下方code
+url='http://nostarch.com'
+print(url.removeprefix('http://'))
+-output-
+nostarch.com
+
+# 删除后缀，removesuffix(".txt")
+file="notes.txt"
+file.removesuffix(".txt")
+❗修正为：
+file="notes.txt"
+print(file.removesuffix(".txt"))
+-output-
+notes
+
+⭐双引号，单引号规则同。注意打印内容如有需区分
+
+
+# 练习2.3⭐⭐️错的
+name="Hello Eric"
+print(\tname)
+
+
+# 练习2.4
+name="Eric lee"
+print(name.lower())
+print(name.upper())
+print(name.title())
+-output-
+eric lee
+ERIC LEE
+Eric Lee
+
+# 练习2.5
+print('\tAE once said"A person"')
+-output-
+        AE once said"A person"
+
+# 练习2.6⭐?
+person="AE"
+message='once said"A person"'
+print
+
+# 练习2.7⭐
+name=" Eric Lee "
+print(name)对的
+
+print(name.lstrip)错的
+
+
+# 练习2.8
+记录上面
+
+
+
+# 数的运算，支持运算顺序
+>>>+-*/
+
+乘方**
+
+
+# 带小数点的数，浮点数：1）小数点可以出现在任何位置。2）包含的小数位数可能不确定，目前暂时忽略多余的小数位数。3）任意两个数相除结果总是浮点数，即便是整除。4）无论哪种运算，只要有操作数是浮点数，默认结果得到浮点数，即便结果原本为整数。
+
+
+# 数中的下划线，用于位分组，使清晰易读，打印时会忽略下划线
+universe=14_000_000_000
+priny(universe)
+
+14000000000
+
+
+# 在一行代码中，按顺序赋值多个变量
+x,y,z=0,1,2
+
+
+# 常量：程序整个生命周期内保持不变的变量。将变量名全大写
+MAX=5000
+
+
+# 练习2.9
+print(5+3)
+print(10-2)
+print(4*2)
+print(16/2)
+-output-
+8
+8
+8
+8.0
+
+练习2.10
+favorite_number=9_999_999
+print(favorite_number)
+
+
+# Python之禅
+import this
+
+
+#
+#
+
+
+# 练习3.1❗注意都需要加引号，没有空格
+names=[alice,ben,cici,danis,ella,fiona]
+print(names[0])
+print(names[0].title())
+
+print(names[-1])
+
+
+# 练习3.2⭐
+names=[alice,ben,cici,danis,ella,fiona]
+print({names[0].title()}f", How are you?")
+
+
+#
+trip=[car, bike, motor, mrt,bus,plane]
+ptint(f"I would like to own a "{trip[-1]})
+
+
+# 修改列表元素
